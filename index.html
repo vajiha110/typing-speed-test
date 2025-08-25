@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Free online typing speed test. Measure your typing speed (WPM) and accuracy in real-time.">
+  <title>Typing Speed Test - Check Your WPM & Accuracy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>⚡ Typing Speed Test</h1>
+      <div class="controls">
+        <label>Duration
+          <select id="duration">
+            <option value="15">15s</option>
+            <option value="30" selected>30s</option>
+            <option value="60">60s</option>
+            <option value="120">120s</option>
+          </select>
+        </label>
+        <button id="startBtn" class="primary">Start Test</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+        <button id="nextBtn" class="ghost" title="Skip current sentence (no penalty)">Next Sentence ↦</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <div id="target" class="target">Press <b>Start Test</b> and begin typing. Your cursor will follow the next character.</div>
+        <div class="inputbox">
+          <input id="typing" class="input" type="text" placeholder="Start typing here…" autocomplete="off" disabled />
+        </div>
+        <div class="hint">Tip: Complete a sentence to auto-load a new one. <span class="blink">Real-time WPM & accuracy update as you type.</span></div>
+      </div>
+
+      <div class="card">
+        <div class="stats">
+          <div class="stat"><h3>Time Left</h3><div id="timeVal" class="val">—</div></div>
+          <div class="stat"><h3>WPM</h3><div id="wpmVal" class="val ok">0</div></div>
+          <div class="stat"><h3>Accuracy</h3><div id="accVal" class="val">100%</div></div>
+          <div class="stat"><h3>Errors</h3><div id="errVal" class="val bad">0</div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Calculation: <br><b>WPM</b> = (correct characters ÷ 5) ÷ minutes. 
+      <br><b>Accuracy</b> = correct ÷ total typed × 100.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
